@@ -42,9 +42,7 @@ def send_xsvf_chunk(s, xsvf):
   return xsvf
 
 def get_xsvf_checksum(xsvf):
-  xsvf_sum = 0
-  for c in xsvf:
-    xsvf_sum += ord(c)
+  xsvf_sum = sum(ord(c) for c in xsvf)
   return (xsvf_sum, len(xsvf))
 
 def maybe_print_lf():
